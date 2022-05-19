@@ -27,7 +27,7 @@ def submission_subtask1(path_to_scores):
          words.append(temp_word)
     f = open("population_restricted.txt")
     tg_words = f.read().split('\n')[:-1]
-    missed_words = list(set(tg_words).intersection(set(words)))
+    missed_words = list(set(tg_words).symmetric_difference(set(words)))
     words.extend(missed_words)
     scores.extend([0.5] * len(missed_words))
     df_scores['word'] = words
