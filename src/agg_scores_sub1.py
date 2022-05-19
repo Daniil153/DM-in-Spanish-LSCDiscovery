@@ -2,6 +2,7 @@ import pandas as pd
 import json
 import os
 import fire
+import numpy as np
 
 def agg_scores(r):
     if len(r) == 2:
