@@ -13,7 +13,7 @@ def agg_scores(r):
 def create_help_df(path):
     dict_df = dict()
     for i in os.listdir(path):
-         f = open("{path}/{i}")
+         f = open(f"{path}/{i}")
          data = json.load(f)
          tmp_df = pd.DataFrame(data)
          word = tmp_df.iloc[0]['id'].split('.')[1]
