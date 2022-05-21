@@ -3,7 +3,6 @@ import json
 import os
 import fire
 import numpy as np
-from collection import defaultdict
 
 def agg_scores(r):
     if len(r) == 2:
@@ -12,7 +11,7 @@ def agg_scores(r):
         return float(r[0])
 
 def create_help_df(path):
-    dict_df = defaultdict(pd.DataFrame)
+    dict_df = dict()
     for i in os.listdir(path):
          f = open("{path}/{i}")
          data = json.load(f)
