@@ -10,11 +10,22 @@ def agg_scores(r):
     else:
         return float(r[0])
 
+def create_help_df(path):
+    dict_df = dict()
+    for i in os.listdir(path):
+         f = open(f"{path}/{i}")
+         data = json.load(f)
+         tmp_df = pd.DataFrame(data)
+         word = tmp_df.iloc[0]['id'].split('.')[1]
+         dict_df[word] = tmp_df
+    return dict_df
+
 def submission_subtask1(path_to_scores, path_to_data):
     path_to_model = '/'.join(path_to_scores.split('/')[:-1])
     df_scores = pd.DataFrame()
     words = []
     scores = []
+    help_df = create_help_df(path_to_data)
     for i in os.listdir(path_to_scores):
          if not i.endswith('scores'):
              continue
@@ -22,10 +33,7 @@ def submission_subtask1(path_to_scores, path_to_data):
          data = json.load(f)
          df = pd.DataFrame(data)
          temp_word = df.iloc[0]['id'].split('.')[1]
-         f1 = open(f"{path_to_data}/{temp_word}.data")
-         data = json.load(f1)
-         df_text = pd.DataFrame(data)
-         df = df.merge(df_text, how='inner', on='id')
+         df = df.merge(help_df[temp_word], how='inner', on='id')
          df = df[df.grp == 'COMPARE']
          df['agg_score'] = df['score'].apply(lambda r: -agg_scores(r))
          scores.append(np.mean(list(df.agg_score)))

@@ -36,7 +36,7 @@ def submission_subtask1(path_to_scores, path_to_data):
          
          df = df.merge(help_df[temp_word], how='inner', on='id')
          df = df[df.grp == 'COMPARE']
-         df['agg_score'] = df['score'].apply(lambda r: agg_scores(r))
+         df['agg_score'] = df['score'].apply(lambda r: -agg_scores(r))
          scores.append(np.mean(list(df.agg_score)))
          temp_word = df.iloc[0]['id'].split('.')[1]
          words.append(temp_word)
