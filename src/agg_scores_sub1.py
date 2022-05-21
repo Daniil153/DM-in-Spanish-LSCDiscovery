@@ -10,7 +10,7 @@ def agg_scores(r):
     else:
         return float(r[0])
 
-def submission_subtask1(path_to_scores):
+def submission_subtask1(path_to_scores, path_to_data):
     path_to_model = '/'.join(path_to_scores.split('/')[:-1])
     df_scores = pd.DataFrame()
     words = []
@@ -21,9 +21,14 @@ def submission_subtask1(path_to_scores):
          f = open(f"{path_to_scores}/{i}")
          data = json.load(f)
          df = pd.DataFrame(data)
-         df['agg_score'] = df['score'].apply(lambda r: agg_scores(r))
-         scores.append(np.mean(list(df.agg_score)))
          temp_word = df.iloc[0]['id'].split('.')[1]
+         f1 = open(f"{path_to_data}/{temp_word}.data")
+         data = json.load(f1)
+         df_text = pd.DataFrame(data)
+         df = df.merge(df_text, how='inner', on='id')
+         df = df[df.grp == 'COMPARE']
+         df['agg_score'] = df['score'].apply(lambda r: -agg_scores(r))
+         scores.append(np.mean(list(df.agg_score)))
          words.append(temp_word)
     f = open("population_restricted.txt")
     tg_words = f.read().split('\n')[:-1]
