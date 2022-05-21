@@ -22,8 +22,7 @@ def submission_subtask1(path_to_scores, path_to_data):
          data = json.load(f)
          df = pd.DataFrame(data)
          temp_word = df.iloc[0]['id'].split('.')[1]
-         w = i.split('.')[1]
-         f1 = open(f"{path_to_data}/{w}.data")
+         f1 = open(f"{path_to_data}/{temp_word}.data")
          data = json.load(f1)
          df_text = pd.DataFrame(data)
          df = df.merge(df_text, how='inner', on='id')
