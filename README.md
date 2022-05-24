@@ -38,23 +38,31 @@ bash download_models.sh WIC+RSS+DWUG+XLWSD WIC_DWUG+XLWSD WIC_RSS
 ```
 To reproduce the best result in evaluation for the 1st phase (graded subtask) you need use:
 ```shell script
-bash eval_WIC_RSS_model_subtask1.sh
+bash eval_WIC_RSS_model_subtask1.sh APD
 ```
-To reproduce the best result in post evaluation you need use:
+To reproduce the best result in post evaluation for the 1st phase (graded subtask) you need use:
 ```shell script
-bash eval_WIC+RSS+DWUG+XLWSD_model_subtask1.sh
+bash eval_WIC+RSS+DWUG+XLWSD_model_subtask2.sh APD
 ```
-To reproduce second the best result in post evaluation you need use:
+To reproduce second the best result in post evaluation for the 1st phase (graded subtask) you need use:
 ```shell script
-bash eval_WIC_DWUG+XLWSD_model_subtask1.sh
+bash eval_WIC_DWUG+XLWSD_model_subtask2.sh APD
 ```
 
+To reproduce the best result in post evaluation for the 2nd phase (binary subtask) you need use:
+```shell script
+bash eval_WIC_DWUG+XLWSD_model_subtask2.sh APD
+```
 
+To evaluate the model with Corellation clustering you need use:
+```shell script
+bash eval_WIC_DWUG+XLWSD_model_subtask2.sh CC
+```
 
 ## Train models
 Also you can train the best three models with 
 ```shell script
-train_best_eval_model.sh
-train_best2_post-eval_model.sh
-train_best_post-eval_model.sh
+train_WIC+RSS+DWUG+XLWSD_model.sh
+train_WIC_DWUG+XLWSD_model.sh
+train_WIC_RSS_model.sh
 ```
