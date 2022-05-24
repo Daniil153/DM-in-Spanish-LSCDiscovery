@@ -56,6 +56,7 @@ bash eval_WIC_DWUG+XLWSD_model_subtask2.sh APD
 
 To evaluate the model with Corellation clustering you need use:
 ```shell script
+bash src/change_WUG.sh
 bash eval_WIC_DWUG+XLWSD_model_subtask2.sh CC
 ```
 
