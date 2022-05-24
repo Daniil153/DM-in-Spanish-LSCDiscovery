@@ -42,7 +42,7 @@ bash eval_WIC_RSS_model_subtask1.sh
 ```
 To reproduce the best result in post evaluation you need use:
 ```shell script
-bash eval_WIC+RSS+DWUG+XLWSD_model_subtask1..sh
+bash eval_WIC+RSS+DWUG+XLWSD_model_subtask1.sh
 ```
 To reproduce second the best result in post evaluation you need use:
 ```shell script
