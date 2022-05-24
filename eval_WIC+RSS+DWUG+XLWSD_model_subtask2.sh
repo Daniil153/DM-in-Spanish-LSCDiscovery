@@ -18,6 +18,10 @@ do
     python src/agg_scores_sub2_apd.py WIC+RSS+DWUG+XLWSD/pairs_sub2 pairs_sub2
   fi
   if [ "$arg" == CC ]; then
-    python src/agg_scores_sub2_cc.py WIC+RSS+DWUG+XLWSD/pairs_sub2 pairs_sub2
+    python src/to_WUG.py pairs_sub2 WIC+RSS+DWUG+XLWSD/pairs_sub2
+    cd WUGs
+    bash -e scripts/run_uug.sh
+    cd ..
+    cp WUGs/test_uug/stats/stats_groupings.csv WIC+RSS+DWUG+XLWSD/cc_stats.csv
   fi
 done
