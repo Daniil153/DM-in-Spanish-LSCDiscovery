@@ -20,7 +20,7 @@ Clone repositories:
 git clone https://github.com/Daniil153/DeepMistake
 cd DeepMistake
 git clone https://github.com/ameta13/mcl-wic
-git clone https://github.com/Garrafao/WUGs
+git clone https://github.com/Garrafao/WUGs #todo: rev
 ```
 Install requirements 
 ```shell script
