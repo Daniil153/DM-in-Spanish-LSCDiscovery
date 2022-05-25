@@ -78,7 +78,7 @@ Results of the LSCD task are presented in the following table. To reproduce them
             <td>MCL+RSS+DWUG_es<sup>bin2</sup><sub>ALL</sub>+XL_WSD, APD</td>
             <td>JSD, Spearman</td>
             <td>0.719</td>
-            <td>eval_best_eval_model.sh</td>
+            <td>bash eval_WIC+RSS+DWUG+XLWSD_model_subtask1.sh APD pairs_sub2</td>
         </tr>
         <tr>
             <td>MCL&rarr;DWUG_es<sup>bin2</sup><sub>ALL</sub>+XL_WSD, APD</td>
