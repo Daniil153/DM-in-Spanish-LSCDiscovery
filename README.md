@@ -77,7 +77,7 @@ Results of the LSCD task are presented in the following table. To reproduce them
     </thead>
     <tbody>
         <tr>
-            <td>first+concat on MCL<sup>en-acc</sup><sub>CE</sub> &rarr; RSS<sup>dev2-sentSpear</sup><sub>MSE</sub>, LinReg(https://zenodo.org/record/4981585/files/first_concat.zip)</td>
+            <td>MCL+RSS+DWUG_es<sup>bin2</sup><sub>ALL</sub></td>
             <td>0.795</td>
             <td>0.812</td>
             <td>0.78</td>
