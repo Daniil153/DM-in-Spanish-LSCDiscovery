@@ -12,12 +12,11 @@ if [ $# -eq 0 ]
     python src/agg_scores_sub1_apd.py WIC+RSS+DWUG+XLWSD/pairs_sub1 pairs_sub1
     exit 0
 fi
-for arg in "$@"
-do
-  if [ "$arg" == APD ]; then
-    python src/agg_scores_sub1_apd.py WIC+RSS+DWUG+XLWSD/pairs_sub1 pairs_sub1
-  fi
-  if [ "$arg" == CC ]; then
-    python src/agg_scores_sub1_cc.py WIC+RSS+DWUG+XLWSD/pairs_sub1 pairs_sub1
-  fi
-done
+method=$1
+pairs=$2 
+if [ $method == APD ]; then
+  python src/agg_scores_sub1_apd.py WIC+RSS+DWUG+XLWSD/${pairs} $pairs
+fi
+if [ $method == CC ]; then
+  python src/agg_scores_sub1_cc.py WIC+RSS+DWUG+XLWSD/${pairs} $pairs
+fi
