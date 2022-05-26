@@ -84,13 +84,13 @@ Results of the LSCD task are presented in the following table. To reproduce them
             <td>MCL&rarr;DWUG_es<sup>bin2</sup><sub>ALL</sub>+XL_WSD, APD</td>
             <td>COMP, Spearman</td>
             <td>0.854</td>
-            <td>eval_2best_post-eval_model.sh</td>
+            <td>bash eval_WIC_DWUG+XLWSD_model_subtask1.sh APD pairs_sub2</td>
         </tr>
         <tr>
             <td>MCL&rarr;DWUG_es<sup>bin2</sup><sub>ALL</sub>+XL_WSD, APD-t</td>
             <td>Binary change, F1</td>
             <td>0.712</td>
-            <td>eval_best_post-eval_model.sh</td>
+            <td>bash eval_WIC_DWUG+XLWSD_model_subtask2.sh APD pairs_sub2</td>
         </tr>
     </tbody>
 </table>
