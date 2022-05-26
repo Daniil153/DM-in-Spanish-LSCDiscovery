@@ -36,29 +36,7 @@ Download models:
 ```shell script
 bash download_models.sh WIC+RSS+DWUG+XLWSD WIC_DWUG+XLWSD WIC_RSS
 ```
-To reproduce the best result in evaluation for the 1st phase (graded subtask) you need use:
-```shell script
-bash eval_WIC_RSS_model_subtask1.sh APD
-```
-To reproduce the best result in post evaluation for the 1st phase (graded subtask) you need use:
-```shell script
-bash eval_WIC+RSS+DWUG+XLWSD_model_subtask2.sh APD
-```
-To reproduce second the best result in post evaluation for the 1st phase (graded subtask) you need use:
-```shell script
-bash eval_WIC_DWUG+XLWSD_model_subtask2.sh APD
-```
 
-To reproduce the best result in post evaluation for the 2nd phase (binary subtask) you need use:
-```shell script
-bash eval_WIC_DWUG+XLWSD_model_subtask2.sh APD
-```
-
-To evaluate the model with Corellation clustering you need use:
-```shell script
-bash src/change_WUG.sh
-bash eval_WIC_DWUG+XLWSD_model_subtask2.sh CC
-```
 
 ## Results
 Results of the LSCD task are presented in the following table. To reproduce them, follow the instructions above to install the correct dependencies. 
